@@ -10,14 +10,13 @@ class App extends PureComponent {
       resultsText: '',
     };
     this.operators = ['+', '-', '*', '/'];
-    this.resetCalculator = this.resetCalculator.bind(this);
+    this.resetcalculator = this.resetcalculator.bind(this);
     this.equal = this.equal.bind(this);
   }
   /** Cambio para repositorio */
   /** SE EJECUTA AL PRESIONAR CUALQUIER BOTON DE TIPO NUMERICO */
 
   numberPress(text) {
-    console.log(text);
     const {valuesText} = this.state;
     if (valuesText === '0') {
       return this.setState({valuesText: text});
@@ -25,8 +24,7 @@ class App extends PureComponent {
     return this.setState({valuesText: valuesText + text});
   }
   /** SE REINICIA LA CALCULADORA AL PRESIONAR EL BOTON C */
-  resetCalculator() {
-    console.log('Reset Calculator');
+  resetcalculator() {
     const {valuesText, resultsText} = this.state;
     this.setState({valuesText: '0', resultsText: ''});
   }
@@ -43,14 +41,12 @@ class App extends PureComponent {
       case '/':
         return false;
     }
-    console.log(valuesText, eval(valuesText));
     this.setState({
       resultsText: eval(valuesText),
     });
   }
   /** SE EJECUTA AL PRESIONAR CUALQUIER OPERACION ARITMETICA */
   operation(symbol) {
-    console.log(symbol);
     const {valuesText, resultsText} = this.state;
     switch (symbol) {
       case 'D':
@@ -63,19 +59,16 @@ class App extends PureComponent {
       case '*':
       case '/':
         const lastChar = this.state.valuesText.split('').pop();
-
         if (this.operators.indexOf(lastChar) > -1) {
           let text = valuesText.split('');
           text.pop();
           this.setState({valuesText: text.join('') + symbol});
           return;
         }
-
         if (valuesText == '') return;
         this.setState({
           valuesText: valuesText + symbol,
         });
-
       default:
         break;
     }
@@ -83,7 +76,6 @@ class App extends PureComponent {
 
   render() {
     const {valuesText, resultsText} = this.state;
-    console.log('render');
     return (
       <View style={styles.container}>
         <View style={styles.values}>
@@ -97,7 +89,7 @@ class App extends PureComponent {
             <CustomButtons
               typeButton="buttonTop"
               label="C"
-              action={this.resetCalculator}></CustomButtons>
+              action={this.resetcalculator}></CustomButtons>
             <CustomButtons
               typeButton="buttonTop"
               label="%"

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/maynorp/Proyectos/React-Native/Curso/AwesomeProject/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml",
+            "outputFile": "/home/maynorp/Documentos/GitHub/React-Native---Calculator/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml",
             "map": [
                 {
                     "source": "/home/maynorp/.gradle/caches/transforms-3/384a804ddf61add8f1298a3b8f500b71/transformed/core-1.1.0/res/values-zh-rHK/values-zh-rHK.xml",
